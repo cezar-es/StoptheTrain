@@ -1,0 +1,955 @@
+[gd_scene load_steps=137 format=2]
+
+[ext_resource path="res://game.gd" type="Script" id=1]
+[ext_resource path="res://images/chars/markIdle.png" type="Texture" id=2]
+[ext_resource path="res://fonts/PermanentMarker-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://dialogue/testarea.gd" type="Script" id=4]
+[ext_resource path="res://images/itembox.png" type="Texture" id=5]
+[ext_resource path="res://images/dialoguebox.png" type="Texture" id=6]
+[ext_resource path="res://images/items/100.png" type="Texture" id=7]
+[ext_resource path="res://images/timebox.png" type="Texture" id=8]
+[ext_resource path="res://dialogue/areaGranny.gd" type="Script" id=9]
+[ext_resource path="res://dialogue/areaDriver.gd" type="Script" id=10]
+[ext_resource path="res://dialogue/areaSanta.gd" type="Script" id=11]
+[ext_resource path="res://dialogue/areaSleeping.gd" type="Script" id=12]
+[ext_resource path="res://images/rooms/trainroom1.png" type="Texture" id=13]
+[ext_resource path="res://images/rooms/desert.png" type="Texture" id=14]
+[ext_resource path="res://images/items/1.png" type="Texture" id=15]
+[ext_resource path="res://images/chars/markwalk2.png" type="Texture" id=16]
+[ext_resource path="res://images/chars/markwalk1.png" type="Texture" id=17]
+[ext_resource path="res://images/chars/markbwalk1.png" type="Texture" id=18]
+[ext_resource path="res://images/chars/markvwalk2.png" type="Texture" id=19]
+[ext_resource path="res://images/chars/markvwalk1.png" type="Texture" id=20]
+[ext_resource path="res://images/chars/markbwalk2.png" type="Texture" id=21]
+[ext_resource path="res://images/chars/markidle2.png" type="Texture" id=22]
+[ext_resource path="res://dialogue/areaCoffee.gd" type="Script" id=23]
+[ext_resource path="res://dialogue/areaAnnoyed.gd" type="Script" id=24]
+[ext_resource path="res://dialogue/areaTroll.gd" type="Script" id=25]
+[ext_resource path="res://images/rooms/trainroom0.png" type="Texture" id=26]
+[ext_resource path="res://images/rooms/trainroom2.png" type="Texture" id=27]
+[ext_resource path="res://images/chars/grimmidle2.png" type="Texture" id=28]
+[ext_resource path="res://images/chars/grimmidle1.png" type="Texture" id=29]
+[ext_resource path="res://dialogue/areaUrgent.gd" type="Script" id=30]
+[ext_resource path="res://images/chars/granny1.png" type="Texture" id=31]
+[ext_resource path="res://images/chars/granny2.png" type="Texture" id=32]
+[ext_resource path="res://images/chars/sleeping2.png" type="Texture" id=33]
+[ext_resource path="res://images/chars/sleeping1.png" type="Texture" id=34]
+[ext_resource path="res://images/chars/sleeping1a.png" type="Texture" id=35]
+[ext_resource path="res://images/chars/sleeping1b.png" type="Texture" id=36]
+[ext_resource path="res://images/chars/urgent1.png" type="Texture" id=37]
+[ext_resource path="res://images/chars/urgent2.png" type="Texture" id=38]
+[ext_resource path="res://images/chars/urgent1a.png" type="Texture" id=39]
+[ext_resource path="res://images/chars/urgent2a.png" type="Texture" id=40]
+[ext_resource path="res://images/chars/coffee0.png" type="Texture" id=41]
+[ext_resource path="res://images/chars/coffee1.png" type="Texture" id=42]
+[ext_resource path="res://images/chars/coffee2.png" type="Texture" id=43]
+[ext_resource path="res://images/chars/coffee3.png" type="Texture" id=44]
+[ext_resource path="res://images/chars/santa7.png" type="Texture" id=45]
+[ext_resource path="res://images/chars/santa1.png" type="Texture" id=46]
+[ext_resource path="res://images/chars/santa4.png" type="Texture" id=47]
+[ext_resource path="res://images/chars/santa3.png" type="Texture" id=48]
+[ext_resource path="res://images/chars/santa2.png" type="Texture" id=49]
+[ext_resource path="res://images/chars/santa5.png" type="Texture" id=50]
+[ext_resource path="res://images/chars/santa6.png" type="Texture" id=51]
+[ext_resource path="res://images/chars/santa8.png" type="Texture" id=52]
+[ext_resource path="res://images/chars/gremlin1.png" type="Texture" id=53]
+[ext_resource path="res://images/chars/gremlin2.png" type="Texture" id=54]
+[ext_resource path="res://images/chars/annoyed3.png" type="Texture" id=55]
+[ext_resource path="res://images/chars/annoyed2.png" type="Texture" id=56]
+[ext_resource path="res://images/chars/annoyed4.png" type="Texture" id=57]
+[ext_resource path="res://images/chars/annoyed1.png" type="Texture" id=58]
+[ext_resource path="res://images/chars/troll4.png" type="Texture" id=59]
+[ext_resource path="res://images/chars/troll2.png" type="Texture" id=60]
+[ext_resource path="res://images/chars/troll1.png" type="Texture" id=61]
+[ext_resource path="res://images/chars/troll3.png" type="Texture" id=62]
+[ext_resource path="res://dialogue/areaJester.gd" type="Script" id=63]
+[ext_resource path="res://images/chars/jester2.png" type="Texture" id=64]
+[ext_resource path="res://images/chars/jester1.png" type="Texture" id=65]
+[ext_resource path="res://dialogue/areaCandy.gd" type="Script" id=66]
+[ext_resource path="res://images/chars/candy1.png" type="Texture" id=67]
+[ext_resource path="res://images/chars/candy2.png" type="Texture" id=68]
+[ext_resource path="res://images/chars/candy4.png" type="Texture" id=69]
+[ext_resource path="res://images/chars/candy3.png" type="Texture" id=70]
+[ext_resource path="res://images/items/7.png" type="Texture" id=71]
+[ext_resource path="res://images/items/6.png" type="Texture" id=72]
+[ext_resource path="res://images/items/5.png" type="Texture" id=73]
+[ext_resource path="res://images/items/3.png" type="Texture" id=74]
+[ext_resource path="res://images/items/8.png" type="Texture" id=75]
+[ext_resource path="res://images/items/4.png" type="Texture" id=76]
+[ext_resource path="res://images/items/2.png" type="Texture" id=77]
+[ext_resource path="res://images/faces/Gremlin.png" type="Texture" id=78]
+[ext_resource path="res://images/faces/Simon.png" type="Texture" id=79]
+[ext_resource path="res://images/faces/Jester.png" type="Texture" id=80]
+[ext_resource path="res://images/faces/Juliet.png" type="Texture" id=81]
+[ext_resource path="res://images/faces/Bob.png" type="Texture" id=82]
+[ext_resource path="res://images/faces/Satan Claus.png" type="Texture" id=83]
+[ext_resource path="res://images/faces/Inspector Herrington.png" type="Texture" id=84]
+[ext_resource path="res://images/faces/Your neighbor.png" type="Texture" id=85]
+[ext_resource path="res://images/faces/Mark.png" type="Texture" id=86]
+[ext_resource path="res://images/faces/Granny Agnes.png" type="Texture" id=87]
+[ext_resource path="res://images/faces/Very annoying man.png" type="Texture" id=88]
+[ext_resource path="res://images/faces/Barista.png" type="Texture" id=89]
+[ext_resource path="res://images/faces/June.png" type="Texture" id=90]
+[ext_resource path="res://images/faces/Train Driver Grimm.png" type="Texture" id=91]
+[ext_resource path="res://EndingHandler.gd" type="Script" id=92]
+[ext_resource path="res://images/cutscenes/a3.png" type="Texture" id=93]
+[ext_resource path="res://images/cutscenes/a1.png" type="Texture" id=94]
+[ext_resource path="res://images/cutscenes/a2.png" type="Texture" id=95]
+[ext_resource path="res://images/faces/???.png" type="Texture" id=96]
+[ext_resource path="res://images/cutscenes/b1.png" type="Texture" id=97]
+[ext_resource path="res://images/cutscenes/b2.png" type="Texture" id=98]
+[ext_resource path="res://images/cutscenes/c2.png" type="Texture" id=99]
+[ext_resource path="res://images/cutscenes/c3.png" type="Texture" id=100]
+[ext_resource path="res://images/cutscenes/c4.png" type="Texture" id=101]
+[ext_resource path="res://images/cutscenes/c1.png" type="Texture" id=102]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "vwalk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "bwalk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 34
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 11.8233, 11.7318 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 53 ), ExtResource( 54 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 9.79602, 10.7406 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 31 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 9.79602, 10.7406 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 67 ), ExtResource( 68 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 70 ), ExtResource( 69 ) ],
+"loop": true,
+"name": "nocandy",
+"speed": 1.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=10]
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 37 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 39 ), ExtResource( 40 ) ],
+"loop": true,
+"name": "urgent",
+"speed": 4.0
+} ]
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 61 ), ExtResource( 60 ) ],
+"loop": true,
+"name": "troll",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 62 ), ExtResource( 59 ) ],
+"loop": true,
+"name": "no",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 9.79602, 10.7406 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 58 ), ExtResource( 56 ) ],
+"loop": true,
+"name": "wrath",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 55 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "calm",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ ExtResource( 65 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 10.805, 10 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ ExtResource( 43 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "wrath",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 41 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "calm",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 12.2333, 11.4982 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ ExtResource( 35 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "awoken",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "sleep",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 11.1871, 12.7054 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ ExtResource( 46 ), ExtResource( 49 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 45 ), ExtResource( 52 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 11.5559, 47.9295 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ ExtResource( 29 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "DialogueBox",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "ItemBox",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ ExtResource( 89 ) ],
+"loop": true,
+"name": "Barista",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 82 ) ],
+"loop": true,
+"name": "Bob",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 90 ) ],
+"loop": true,
+"name": "June",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 85 ) ],
+"loop": true,
+"name": "Your neighbor",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 83 ) ],
+"loop": true,
+"name": "Satan Claus",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 84 ) ],
+"loop": true,
+"name": "Inspector Herrington",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 86 ) ],
+"loop": true,
+"name": "Mark",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 81 ) ],
+"loop": true,
+"name": "Juliet",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 78 ) ],
+"loop": true,
+"name": "Gremlin",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 91 ) ],
+"loop": true,
+"name": "Train Driver Grimm",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 87 ) ],
+"loop": true,
+"name": "Granny Agnes",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 88 ) ],
+"loop": true,
+"name": "Very annoying man",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 80 ) ],
+"loop": true,
+"name": "Jester",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 79 ) ],
+"loop": true,
+"name": "Simon",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 96 ) ],
+"loop": true,
+"name": "???",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=26]
+size = 25
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=27]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "100",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 75 ) ],
+"loop": true,
+"name": "8",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 77 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 74 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 73 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 72 ) ],
+"loop": true,
+"name": "6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 71 ) ],
+"loop": true,
+"name": "7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 76 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=29]
+size = 36
+font_data = ExtResource( 3 )
+
+[sub_resource type="SpriteFrames" id=30]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=31]
+animations = [ {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "trainroom1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "trainroom0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": true,
+"name": "trainroom2",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=32]
+animations = [ {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=33]
+animations = [ {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=34]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "end",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 98 ) ],
+"loop": true,
+"name": "b2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 100 ) ],
+"loop": true,
+"name": "c3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 99 ) ],
+"loop": true,
+"name": "c2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 95 ) ],
+"loop": true,
+"name": "a2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 94 ) ],
+"loop": true,
+"name": "a1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 93 ) ],
+"loop": true,
+"name": "a3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 97 ) ],
+"loop": true,
+"name": "b1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 101 ) ],
+"loop": true,
+"name": "c4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 102 ) ],
+"loop": true,
+"name": "c1",
+"speed": 5.0
+} ]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Player" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 287.028, 305.559 )
+z_index = 1
+frames = SubResource( 1 )
+animation = "idle"
+frame = 1
+playing = true
+offset = Vector2( 0, -48 )
+
+[node name="PlayerBox" type="Area2D" parent="Player"]
+
+[node name="PlayerBoxCol" type="CollisionShape2D" parent="Player/PlayerBox"]
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text1" type="RichTextLabel" parent="."]
+visible = false
+show_behind_parent = true
+margin_left = 10.156
+margin_top = 474.179
+margin_right = 332.156
+margin_bottom = 524.179
+custom_fonts/normal_font = SubResource( 3 )
+text = "Press Z to talk"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="testarea" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 4 )
+
+[node name="Col" type="CollisionShape2D" parent="testarea"]
+position = Vector2( 452.071, 300.446 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="testarea"]
+position = Vector2( 447.05, 196.233 )
+scale = Vector2( 0.38295, 0.38295 )
+frames = SubResource( 5 )
+animation = "New Anim"
+playing = true
+
+[node name="areaGranny" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 9 )
+
+[node name="Col" type="CollisionShape2D" parent="areaGranny"]
+position = Vector2( 570.195, 292.128 )
+shape = SubResource( 6 )
+disabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="areaGranny"]
+position = Vector2( 606.631, 116.06 )
+scale = Vector2( 0.637773, 0.637773 )
+frames = SubResource( 7 )
+animation = "New Anim"
+frame = 1
+playing = true
+
+[node name="areaCandy" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 66 )
+
+[node name="Col" type="CollisionShape2D" parent="areaCandy"]
+position = Vector2( 477.195, 293.128 )
+shape = SubResource( 8 )
+disabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="areaCandy"]
+position = Vector2( 468.631, 213.601 )
+scale = Vector2( 0.637773, 0.637773 )
+frames = SubResource( 9 )
+frame = 1
+playing = true
+
+[node name="Timer" type="Timer" parent="areaCandy"]
+wait_time = 60.0
+
+[node name="areaUrgent" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 30 )
+
+[node name="Col" type="CollisionShape2D" parent="areaUrgent"]
+position = Vector2( 158.201, 294.105 )
+shape = SubResource( 10 )
+disabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="areaUrgent"]
+position = Vector2( 167.338, 202.656 )
+frames = SubResource( 11 )
+frame = 1
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="areaTroll" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 25 )
+
+[node name="Col" type="CollisionShape2D" parent="areaTroll"]
+position = Vector2( 570.195, 292.128 )
+shape = SubResource( 6 )
+disabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="areaTroll"]
+position = Vector2( 566.705, 135.571 )
+frames = SubResource( 12 )
+animation = "troll"
+playing = true
+
+[node name="areaAnnoyed" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 24 )
+
+[node name="Col" type="CollisionShape2D" parent="areaAnnoyed"]
+position = Vector2( 671.619, 299.058 )
+shape = SubResource( 13 )
+disabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="areaAnnoyed"]
+position = Vector2( 699.206, 160.319 )
+frames = SubResource( 14 )
+animation = "wrath"
+frame = 1
+playing = true
+
+[node name="areaJester" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 63 )
+
+[node name="Col" type="CollisionShape2D" parent="areaJester"]
+position = Vector2( 121.429, 407.018 )
+shape = SubResource( 13 )
+disabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="areaJester"]
+position = Vector2( 61.5251, 326.882 )
+frames = SubResource( 15 )
+playing = true
+
+[node name="areaCoffee" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 23 )
+
+[node name="Col" type="CollisionShape2D" parent="areaCoffee"]
+position = Vector2( 170.195, 290.128 )
+shape = SubResource( 16 )
+disabled = true
+
+[node name="Timer" type="Timer" parent="areaCoffee"]
+wait_time = 45.0
+one_shot = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="areaCoffee"]
+position = Vector2( 165.311, 114.5 )
+scale = Vector2( 0.660256, 0.660256 )
+frames = SubResource( 17 )
+animation = "calm"
+frame = 1
+playing = true
+
+[node name="areaSleeping" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 12 )
+
+[node name="Col" type="CollisionShape2D" parent="areaSleeping"]
+position = Vector2( 317.742, 290.787 )
+shape = SubResource( 18 )
+disabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="areaSleeping"]
+position = Vector2( 372.769, 146.135 )
+frames = SubResource( 19 )
+animation = "sleep"
+frame = 1
+playing = true
+
+[node name="areaSanta" type="Area2D" parent="."]
+visible = false
+z_index = -1
+script = ExtResource( 11 )
+
+[node name="Col" type="CollisionShape2D" parent="areaSanta"]
+position = Vector2( 293.687, 294.981 )
+shape = SubResource( 20 )
+disabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="areaSanta"]
+position = Vector2( 296.65, 166.336 )
+frames = SubResource( 21 )
+frame = 4
+playing = true
+
+[node name="areaDriver" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 10 )
+
+[node name="Col" type="CollisionShape2D" parent="areaDriver"]
+position = Vector2( 349.434, 312.929 )
+shape = SubResource( 22 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="areaDriver"]
+position = Vector2( 447.862, 222.247 )
+frames = SubResource( 23 )
+playing = true
+
+[node name="GUIBox" type="AnimatedSprite" parent="."]
+position = Vector2( 400, 500 )
+z_index = 2
+frames = SubResource( 24 )
+animation = "DialogueBox"
+
+[node name="Portrait" type="AnimatedSprite" parent="GUIBox"]
+position = Vector2( -286.091, 2.11896 )
+z_index = -1
+frames = SubResource( 25 )
+animation = "???"
+
+[node name="DialB" type="Node2D" parent="."]
+z_index = 5
+
+[node name="DialogueBox" type="RichTextLabel" parent="DialB"]
+margin_left = 207.0
+margin_top = 456.0
+margin_right = 777.0
+margin_bottom = 617.0
+custom_fonts/normal_font = SubResource( 26 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleBox" type="RichTextLabel" parent="DialB"]
+margin_left = 205.0
+margin_top = 421.0
+margin_right = 774.0
+margin_bottom = 471.0
+custom_fonts/normal_font = SubResource( 27 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "GOD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemSprites" type="Node2D" parent="."]
+visible = false
+
+[node name="Item1" type="AnimatedSprite" parent="ItemSprites"]
+position = Vector2( 40, 560 )
+z_index = 3
+frames = SubResource( 28 )
+animation = "0"
+
+[node name="Item2" type="AnimatedSprite" parent="ItemSprites"]
+position = Vector2( 112, 560 )
+z_index = 3
+frames = SubResource( 28 )
+animation = "0"
+
+[node name="Item3" type="AnimatedSprite" parent="ItemSprites"]
+position = Vector2( 184, 560 )
+z_index = 3
+frames = SubResource( 28 )
+animation = "0"
+
+[node name="Item4" type="AnimatedSprite" parent="ItemSprites"]
+position = Vector2( 256, 560 )
+z_index = 3
+frames = SubResource( 28 )
+animation = "0"
+
+[node name="Item5" type="AnimatedSprite" parent="ItemSprites"]
+position = Vector2( 328, 560 )
+z_index = 3
+frames = SubResource( 28 )
+animation = "0"
+
+[node name="Item6" type="AnimatedSprite" parent="ItemSprites"]
+position = Vector2( 400, 560 )
+z_index = 3
+frames = SubResource( 28 )
+animation = "0"
+
+[node name="Item7" type="AnimatedSprite" parent="ItemSprites"]
+position = Vector2( 472, 560 )
+z_index = 3
+frames = SubResource( 28 )
+animation = "0"
+
+[node name="Item8" type="AnimatedSprite" parent="ItemSprites"]
+position = Vector2( 544, 560 )
+z_index = 3
+frames = SubResource( 28 )
+animation = "0"
+
+[node name="Item9" type="AnimatedSprite" parent="ItemSprites"]
+position = Vector2( 616, 560 )
+z_index = 3
+frames = SubResource( 28 )
+animation = "0"
+
+[node name="Item10" type="AnimatedSprite" parent="ItemSprites"]
+position = Vector2( 688, 560 )
+z_index = 3
+frames = SubResource( 28 )
+animation = "0"
+
+[node name="TimeLeft" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 347.264
+margin_top = 0.749153
+margin_right = 453.264
+margin_bottom = 53.7492
+custom_fonts/normal_font = SubResource( 29 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]88:88[/center]"
+text = "88:88"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="TimeLeft"]
+wait_time = 30.0
+one_shot = true
+
+[node name="TimeLeftBox" type="AnimatedSprite" parent="."]
+visible = false
+show_behind_parent = true
+position = Vector2( 400, 30 )
+frames = SubResource( 30 )
+
+[node name="Background" type="AnimatedSprite" parent="."]
+position = Vector2( 400, 300 )
+z_index = -3
+frames = SubResource( 31 )
+animation = "trainroom2"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ScrollingBackground" type="AnimatedSprite" parent="."]
+position = Vector2( 400, 300 )
+z_index = -5
+frames = SubResource( 32 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Scroll2" type="AnimatedSprite" parent="ScrollingBackground"]
+position = Vector2( 800, 0 )
+frames = SubResource( 33 )
+
+[node name="EndingHandler" type="Node2D" parent="."]
+script = ExtResource( 92 )
+
+[node name="Images" type="AnimatedSprite" parent="EndingHandler"]
+position = Vector2( 400, 300 )
+frames = SubResource( 34 )
+animation = "end"
+
+[connection signal="area_entered" from="Player/PlayerBox" to="." method="_on_PlayerBox_area_entered"]
+[connection signal="area_exited" from="Player/PlayerBox" to="." method="_on_PlayerBox_area_exited"]
+[connection signal="dialogueEnd" from="testarea" to="." method="_on_dialogueEnd"]
+[connection signal="giveItem" from="testarea" to="." method="_on_giveItem"]
+[connection signal="loseItem" from="testarea" to="." method="_on_loseItem"]
+[connection signal="tradeComplete" from="testarea" to="." method="_on_tradeComplete"]
+[connection signal="dialogueEnd" from="areaGranny" to="." method="_on_dialogueEnd"]
+[connection signal="giveItem" from="areaGranny" to="." method="_on_giveItem"]
+[connection signal="loseItem" from="areaGranny" to="." method="_on_loseItem"]
+[connection signal="tradeComplete" from="areaGranny" to="." method="_on_tradeComplete"]
+[connection signal="dialogueEnd" from="areaCandy" to="." method="_on_dialogueEnd"]
+[connection signal="giveItem" from="areaCandy" to="." method="_on_giveItem"]
+[connection signal="loseItem" from="areaCandy" to="." method="_on_loseItem"]
+[connection signal="tradeComplete" from="areaCandy" to="." method="_on_tradeComplete"]
+[connection signal="dialogueEnd" from="areaUrgent" to="." method="_on_dialogueEnd"]
+[connection signal="giveItem" from="areaUrgent" to="." method="_on_giveItem"]
+[connection signal="loseItem" from="areaUrgent" to="." method="_on_loseItem"]
+[connection signal="tradeComplete" from="areaUrgent" to="." method="_on_tradeComplete"]
+[connection signal="dialogueEnd" from="areaTroll" to="." method="_on_dialogueEnd"]
+[connection signal="endTrolling" from="areaTroll" to="areaAnnoyed" method="_on_endTrolling"]
+[connection signal="giveItem" from="areaTroll" to="." method="_on_giveItem"]
+[connection signal="loseItem" from="areaTroll" to="." method="_on_loseItem"]
+[connection signal="tradeComplete" from="areaTroll" to="." method="_on_tradeComplete"]
+[connection signal="dialogueEnd" from="areaAnnoyed" to="." method="_on_dialogueEnd"]
+[connection signal="giveItem" from="areaAnnoyed" to="." method="_on_giveItem"]
+[connection signal="loseItem" from="areaAnnoyed" to="." method="_on_loseItem"]
+[connection signal="tradeComplete" from="areaAnnoyed" to="." method="_on_tradeComplete"]
+[connection signal="dialogueEnd" from="areaJester" to="." method="_on_dialogueEnd"]
+[connection signal="giveItem" from="areaJester" to="." method="_on_giveItem"]
+[connection signal="loseItem" from="areaJester" to="." method="_on_loseItem"]
+[connection signal="tradeComplete" from="areaJester" to="." method="_on_tradeComplete"]
+[connection signal="dialogueEnd" from="areaCoffee" to="." method="_on_dialogueEnd"]
+[connection signal="giveItem" from="areaCoffee" to="." method="_on_giveItem"]
+[connection signal="loseItem" from="areaCoffee" to="." method="_on_loseItem"]
+[connection signal="tradeComplete" from="areaCoffee" to="." method="_on_tradeComplete"]
+[connection signal="dialogueEnd" from="areaSleeping" to="." method="_on_dialogueEnd"]
+[connection signal="giveItem" from="areaSleeping" to="." method="_on_giveItem"]
+[connection signal="loseItem" from="areaSleeping" to="." method="_on_loseItem"]
+[connection signal="tradeComplete" from="areaSleeping" to="." method="_on_tradeComplete"]
+[connection signal="dialogueEnd" from="areaSanta" to="." method="_on_dialogueEnd"]
+[connection signal="giveItem" from="areaSanta" to="." method="_on_giveItem"]
+[connection signal="loseItem" from="areaSanta" to="." method="_on_loseItem"]
+[connection signal="tradeComplete" from="areaSanta" to="." method="_on_tradeComplete"]
+[connection signal="dialogueEnd" from="areaDriver" to="." method="_on_dialogueEnd"]
+[connection signal="giveItem" from="areaDriver" to="." method="_on_giveItem"]
+[connection signal="loseItem" from="areaDriver" to="." method="_on_loseItem"]
+[connection signal="tradeComplete" from="areaDriver" to="." method="_on_tradeComplete"]
+[connection signal="timeout" from="TimeLeft/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="dialogueEnd" from="EndingHandler" to="." method="_on_dialogueEnd"]
+[connection signal="gameStart" from="EndingHandler" to="." method="_on_EndingHandler_gameStart"]
